@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Pattaya&display=swap");
+
+* {
+  font-family: Pattaya;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+section {
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 280px;
+}
+
+.container {
+  width: auto;
+  height: auto;
+  max-height: 400px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: lightseagreen;
+}
+
+.recipePhoto {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#header {
+  text-align: center;
+  font-size: 50px;
+  background-color: lightseagreen;
+  color: whitesmoke;
+  margin-bottom: 30px;
+}
+
+#recipe-section {
+  width: 90%;
+  max-width: auto;
+  margin: 20px auto;
+  border-radius: 4px;
+  color: lightseagreen;
+}
+
+#food-input {
+  width: 50%;
+  background-color: transparent;
+  color: lightseagreen;
+  padding: 10px;
+  outline: none;
+  font-size: 15px;
+  display: inline-block;
+}
+
+.search-result {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.item {
+  width: 100%;
+  border-radius: 8px;
+  background-color: rgb(37, 37, 37);
+}
+
+.recipe-label {
+  text-decoration: none;
+  text-align: center;
+  width: 130px;
+  margin-bottom: 5px;
+  background-color: grey;
+  color: white;
+  font-size: 25px;
+  margin-top: 20px;
+}

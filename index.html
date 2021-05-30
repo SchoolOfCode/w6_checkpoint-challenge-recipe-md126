@@ -3,21 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fetch</title>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Recipe Generator</title>
   </head>
   <body>
-    <section id="recipe-section">
+    <header id="header">I'm Head over Meals with this Recipe Finder</header>
+    <article id="recipe-section">
       <h2 class="section-heading">Welcome to the Recipe Finder!</h2>
       <input
         aria-label="food-input"
         id="food-input"
+        type="text"
         onchange="handleFoodChange()"
+        placeholder="Search Your Recipe..."
       />
       <button id="recipe-button" onclick="handleRecipeClick()">
         Give me a recipe!
       </button>
-      <a id="recipe-label"></a>
-    </section>
+    </article>
+    <div id="container">
+      <section class="search-result">
+        <div class="recipe-item">
+          <a href="#" id="recipe-link"></a>
+          <img scr="" id="recipe-image" alt="image of the recipe" width="200" />
+        </div>
+      </section>
+    </div>
     <script src="./main.js"></script>
   </body>
 </html>
