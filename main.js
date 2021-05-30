@@ -1,25 +1,37 @@
 let foodToSearch = null;
 const YOUR_APP_ID = "b479a854";
 const YOUR_APP_KEY = "3c479096c85ad3bcbd127e27d5e14ef2";
+let myData;
 
 function handleRecipeClick() {
-  fetchRecipe(foodToSearch).then(getData);
+  fetchRecipe(foodToSearch);
+  // .then(getData);
 }
 
 function handleFoodChange() {
   foodToSearch = document.querySelector("#food-input").value;
+  return foodToSearch;
 }
 
-async function fetchRecipe(food) {
-  const requestUrl = `https://api.edamam.com/search?q=${food}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}`;
+async function fetchRecipe() {
+  //grab the API
+  const requestUrl = `https://api.edamam.com/search?q=${foodToSearch}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}`;
+  //request API
   const response = await fetch(requestUrl);
-  const data = await response.json();
+  //store the response in a variable
+  let data = await response.json();
   console.log(data);
+  //storing recipe label in a variable
+  myDataLabel = data.hits[0].recipe.label;
+  //grabbing aTag from HTML
+  let aTag = document.getElementById("recipe-link");
+  console.log(aTag);
+  //putting text into the aTag
+  aTag.innerHTML = myDataLabel;
+  //storing recipeURL into a variable
+  myRecipeURL = data.hits[0].recipe.url;
+  //assigning the URL to href
+  aTag.href = myRecipeURL;
+  console.log(myRecipeURL);
   return data;
-}
-
-function getData(data) {
-  const recipeResults = document.getElementById("recipe-button");
-  recipeResults.innerHTML = data.count;
-  document.getElementById("recipe-button").style.visibility = "hidden";
 }
