@@ -33,5 +33,11 @@ async function fetchRecipe() {
   //assigning the URL to href
   aTag.href = myRecipeURL;
   console.log(myRecipeURL);
+  //store recipe image in a variable
+  myRecipeImage = data.hits[0].recipe.image;
+  //target the image element from HTML
+  let imageTag = document.getElementById("recipe-image");
+  //assinging the scr to the image tag
+  imageTag.src = myRecipeImage;
   return data;
 }
